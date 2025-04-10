@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harry Schlote</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/faviconharryschlote.png">
+  <link rel="apple-touch-icon" href="assets/webclipharryschlote.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <div id="instance-nav"></div>
+
+
+
+  <div id="container">
+    <div class="header-section" id="centre-header">
+        <h1>Get in Touch</h1>
+      </div>
+
+    <div class="contact-flex">
+        <div id="form-outline">
+        <h2 id="form">Contact Form</h2>
+        <p>Fill out the form below if you are interested in a project, think there is potential for partnerships, or have any other questions!</p>
+        <form id="form-id" class="form-class needs-validation" action="https://formsubmit.co/harry.schlote@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <!-- CHANGE AFTER PUBLISHING TO DOMAIN -->
+        <input type="hidden" name="_next" value="http://www.harryschlote.com/contact_submitted">
+        <input type="hidden" name="_subject" value="New submission!">
+            <div class="fcf-form-group">
+                <label for="Name" class="contact-headings">NAME*</label>
+                <div class="fcf-input-group">
+                    <input type="text" id="Name" name="Name" class="fcf-form-control" required oninvalid="handleInvalid(this)" oninput="handleInput(this)">
+                    <span id="Name-error" class="error-message"></span>
+                </div>
+            </div>
+            <div class="fcf-form-group">
+                <label for="Email" class="contact-headings">EMAIL*</label>
+                <div class="fcf-input-group">
+                    <input type="email" id="Email" name="Email" class="fcf-form-control" required oninvalid="handleInvalid(this)" oninput="handleInput(this)">
+                    <span id="Email-error" class="error-message"></span>
+                </div>
+            </div>
+            <div class="fcf-form-group">
+                <label for="Message" class="contact-headings">MESSAGE*</label>
+                <div class="fcf-input-group">
+                    <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required oninvalid="handleInvalid(this)" oninput="handleInput(this)"></textarea>
+                    <span id="Message-error" class="error-message"></span>
+                </div>
+            </div>
+            <div class="fcf-form-group" id="button-div">
+                <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send</button>
+            </div>
+        </div>
+        <div id="side-info">
+            <h2>Working Hours</h2>
+            <p>Monday - Friday: 9am - 6pm</p>
+            <h2>Social Media</h2>
+            <div>
+                <a href="https://www.linkedin.com/in/harry-schlote-60a331202/">
+                <img id="footer-icon" alt="linkedin logo" src="../assets/linkedin.png"></a>
+                <a href="https://github.com/harryschlote">
+                <img id="footer-icon"alt="Github logo" src="../assets/Github.png" ></a>
+                <a href="https://www.youtube.com/channel/UC_F56693bqzBCt_nrGAZFwA">
+                <img id="footer-icon" alt="Youtube logo" src="../assets/Youtube.png"></a>
+            </div>
+            <h2 id="location">Location</h2>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858.58519602238!2d-0.2664050245106186!3d51.52852620113952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!5e0!3m2!1sen!2suk!4v1711800765248!5m2!1sen!2suk" height="295" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+        </div>
+    </div>
+  </div>
+
+
+ <!-- Footer -->
+ <div id="instance-footer"></div>
+ 
+
+</body>
+ <!-- Script -->
+ <script src="main.js"></script>
+</html>
