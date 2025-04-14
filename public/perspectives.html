@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harry Schlote</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/faviconharryschlote.png">
+  <link rel="apple-touch-icon" href="assets/webclipharryschlote.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <!-- Navbar -->
+  <div id="instance-nav"></div>
+  <div id="container">
+    <div class="header-section" id="centre-header">
+      <h1>Perspectives</h1>
+    </div>
+
+  <div class="section-break" id="data"></div>
+    <div class="main-section">
+        <div id="feed"></div>
+    </div>
+  </div>
+
+
+  <script>
+    async function loadPosts() {
+      const feed = document.getElementById('feed');
+
+      // 🧱 Add 3 skeleton posts before loading real content
+      feed.innerHTML = '';
+      for (let i = 0; i < 3; i++) {
+        const skeleton = document.createElement('div');
+        skeleton.classList.add('skeleton-post');
+        skeleton.innerHTML = `<div class="article-para">
+          <div class="skeleton skeleton-title"></div>
+          <div class="skeleton skeleton-date" id="post-date"></div>
+          <div class="skeleton skeleton-summary"></div>
+          <div class="skeleton skeleton-summary"></div>
+          <div class="skeleton skeleton-summary"></div>
+          </div>
+        `;
+        feed.appendChild(skeleton);
+      }
+
+      try {
+        const response = await fetch('/api/blog');
+        const posts = await response.json();
+
+        // 💥 Clear skeletons
+        feed.innerHTML = '';
+
+        posts.forEach((post, index) => {
+          const postElement = document.createElement('div');
+          postElement.classList.add('post');
+
+          postElement.innerHTML = `<div class="article-para">
+            <h2><a href="/perspectives/${post.slug}">${post.title}</a><img class="item-arrow" src="assets/arrow.svg"/></h2>
+            <p id="post-date">${new Date(post.date).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}</p>
+            <div class="post-content">${post.content}</div>
+            </div>
+            `;
+
+          feed.appendChild(postElement);
+
+          if (index < posts.length - 1) {
+            const hr = document.createElement('hr');
+            hr.classList.add('separator');
+            feed.appendChild(hr);
+          }
+        });
+      } catch (error) {
+        console.error('Error loading posts:', error);
+        feed.innerHTML = '<p>Failed to load blog posts. Please try again later.</p>';
+      }
+    }
+
+    loadPosts();
+  </script>
+
+
+
+ <!-- Footer -->
+ <div id="instance-footer"></div>
+
+ <!-- Script -->
+ <script src="main.js"></script>
+ 
+</body>
+</html>
