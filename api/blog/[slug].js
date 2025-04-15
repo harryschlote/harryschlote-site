@@ -67,9 +67,18 @@ module.exports = async (req, res) => {
       },
     });
 
+    console.log('Requested slug:', slug);
+    const allSlugs = response.results.map(page => {
+      const fullSlug = page.properties['URL Slug']?.url || '';
+      const pageSlug = fullSlug.split('/').pop();
+      return { fullSlug, pageSlug };
+    });
+    console.log('All slugs from Notion:', allSlugs);
+
     const matchedPage = response.results.find(page => {
       const fullSlug = page.properties['URL Slug']?.url || '';
       const pageSlug = fullSlug.split('/').pop();
+      console.log('Checking page:', { fullSlug, pageSlug, slug });
       return pageSlug.toLowerCase() === slug.toLowerCase();
     });
 
