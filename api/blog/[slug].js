@@ -68,7 +68,7 @@ module.exports = async (req, res) => {
     });
 
     const matchedPage = response.results.find(page => {
-      const fullSlug = page.properties['URL Slug']?.rich_text?.[0]?.plain_text || '';
+      const fullSlug = page.properties['URL Slug']?.url || '';
       const pageSlug = fullSlug.split('/').pop();
       return pageSlug.toLowerCase() === slug.toLowerCase();
     });
