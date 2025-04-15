@@ -5,6 +5,7 @@
     { "source": "/projects/(.*)", "destination": "/projects/$1" },
     { "source": "/style.css", "destination": "/style.css" },
     { "source": "/main.js", "destination": "/main.js" },
+    { "source": "/perspectives/:slug", "destination": "/post.html" },
     { "source": "/(.*)", "destination": "/$1.html" }
   ]
 } 
