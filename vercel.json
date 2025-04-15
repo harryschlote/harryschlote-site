@@ -1,5 +1,10 @@
 {
   "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/assets/(.*)", "destination": "/assets/$1" },
+    { "source": "/projects/(.*)", "destination": "/projects/$1" },
+    { "source": "/style.css", "destination": "/style.css" },
+    { "source": "/main.js", "destination": "/main.js" },
     { "source": "/(.*)", "destination": "/$1.html" }
   ]
 } 
