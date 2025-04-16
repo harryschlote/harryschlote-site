@@ -4,6 +4,7 @@ const { Client } = require('@notionhq/client');
 const app = express();
 const port = process.env.PORT || 3000;
 const path = require('path');
+const fs = require('fs');
 
 
 // Notion client setup
@@ -65,6 +66,20 @@ function renderBlock(block) {
 
 
 
+
+app.use((req, res, next) => {
+  if (
+    req.method === 'GET' &&
+    !req.path.endsWith('.html') &&
+    !req.path.includes('.') // skip assets like .css, .js, .png, etc.
+  ) {
+    const filePath = path.join(__dirname, 'public', req.path + '.html');
+    if (fs.existsSync(filePath)) {
+      return res.sendFile(filePath);
+    }
+  }
+  next();
+});
 
 app.use(express.static('public'));
 
