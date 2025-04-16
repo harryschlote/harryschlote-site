@@ -74,8 +74,8 @@
       <div class="article-para">
         <b>Cleaning kitchen surfaces is a mundane daily task, but keeps a home tidy and germ free. Users with low dexterity can struggle using clothes and sponges, and lack an inclusive surface cleaning product. Our vision was to provide a battery powered product that improves the experience of this user group when cleaning surfaces, while also ensuring it is mass marketable to a wider audience.</b>
         <div class="video-container" style="text-align: center;">
-          <video class="myVideo" playsinline poster="projects/ERGOCLEAN_poster.png" preload="metadata" width="100%">
-            <source src="projects/ERGOCLEAN_video.mov" type="video/mp4">
+          <video class="myVideo" playsinline poster="projects/ergoclean_poster.png" preload="metadata" width="100%">
+            <source src="projects/ergoclean_video.mov" type="video/mp4">
           </video>
           <div class="play-overlay playButton"></div>
         </div>
@@ -83,7 +83,7 @@
         <p>The product needed to look sleek to appeal to the mass market, while also integrating usable features for the low-dexterity user group. The on/off button needed to be easy to find and not covered by the user’s hand when in use. It should be sufficiently large, protrude from the casing, and have low resistance, making it friendly for low-dexterity users. The LED on the front of our product indicates different phases it is in, drawing inspiration from the simple design of the Philips Lumea laser hair removal device. The form of the device was inspired by a mouse and the Tangle Teezer product, while integrating a permanent strap to aid in gripping the product.</p>
         <p>For charging, a magnetic USB charger was used, ensuring little force or precision was required to attach it. The main body of the product would be made from Sanipolymer, a self-sanitizing material. The team found inspiration to use this material as it is the primary material used in Dame’s reusable tampon applicator. Additionally, the product includes a rubber pad where the user's fingers rest for extra grip.</p>
         <div style="text-align: center; display: flex; flex-direction: column; align-items: center; padding-top: 40px; padding-bottom: 20px;">
-          <img class="article-image" src="projects/ERGOCLEAN_POS.jpg" width="100%">
+          <img class="article-image" src="projects/ergoclean_pos.jpg" width="100%">
           <i class="table-caption">Figure 1. Product render, showing its handle to help with grip and large power button</i>
         </div>
         <h2>Mechanism</h2>
@@ -91,7 +91,7 @@
         <p>It was decided not to integrate multiple speed vibrations as having more speeds would mean that the design and electronics are more complex. A speed control feature would be difficult to make user-friendly with the low-dexterity user group in terms of size and motion for operation.</p>
         <p>The vibrating cleaning plate would come with multiple attachments secured via a hook and loop mechanism, designed to tackle stains on a variety of surfaces. These attachments would include a metal wire scrub plate, a cloth-like plate and sponge plate.</p>
         <div style="text-align: center; display: flex; flex-direction: column; align-items: center; padding-top: 40px; padding-bottom: 20px;">
-          <img class="article-image" src="projects/ERGOCLEAN_exploded.jpg" width="100%">
+          <img class="article-image" src="projects/ergoclean_exploded.jpg" width="100%">
           <i class="table-caption">Figure 2. Exploded view</i>
         </div>
       </div>
@@ -115,7 +115,7 @@
           <p>To demonstrate manufacturability, a detailed mould was created for the top part. These moulds would be injected with molten ABS. Once solidified, the 2-part mould would come apart with the part in-between. Draft analysis of the casing was carried out as this custom-formed ergonomic shape was likely to be hard to manufacture. The parting line was modified until the top and bottom lines had the correct drafts, satisfying the requirement of no parts with less than 0.5<sup>o</sup> angle.</p>
           <p>The first FEA test simulated the force of the user's hand on the product, taken from real life measurements from users testing the prototype. The maximum von Misus stress recorded was 5x10^5 N/m<sup>2</sup>, although on closer analysis this was due to the inside the shell having a sharp edge where the fingers press down. This would be solved by filleting the inside of the shell to remove abrupt changes in material direction. The rest of the product has a stress below 3x10^5 N/m<sup>2</sup>. A safety factor of 2 was used for this FEA simulation.</p>
           <div style="text-align: center; display: flex; flex-direction: column; align-items: center; padding-top: 20px; padding-bottom: 20px;">
-            <img class="article-image" src="projects/ERGOCLEAN_FEA.png" width="70%">
+            <img class="article-image" src="projects/ergoclean_fea.png" width="70%">
             <i class="table-caption">Figure 3. FEA digital testing of the product</i>
           </div>
           <p>Another FEA test focused on the snap fit design securing the silicone strap to the upper ABS casing. The test was non-linear, including the snap fit component being moved 15mm, passing through the strap hole and the casing hole. From the test, it was evident that the thin 'prongs' on the snap fit were under the most stress, with maximum stress in the order of 10^8 N/m<sup>2</sup>. Testing revealed the need to refine the design to meet stress requirements. This would be done by extending the prong length and changing the shape of the top of the prongs that first come into the hole surfaces.</p>
@@ -124,7 +124,7 @@
           <p>Vibration requirements for the surface-cleaning device are based on cordless random orbit sanders, which typically have an orbital stroke rate of 6000 to 10000 opm (orbits per minute). To ensure lower vibration levels, we aim for a lower bound value of 6000 opm. A motor with at least 12000 rpm no-load speed was required, equivalent to 2 times the orbital speed. We opt for a 12 V input voltage, standard for most cordless random orbit sanders and batteries. The chosen DC Motor meets these requirements: 21.2 W, 4.5-15 V, 13360 rpm, 3.18 mm Shaft Diameter.</p>
           <p>The device's electronic circuit, including an indicator LED, will draw power primarily from the motor. Assuming a maximum continuous runtime of 30 minutes based on user surveys, we aim for the device to run for an hour continuously when fully charged, with a safety factor of 2.0. An 11.1V Lithium-Ion Rechargeable Battery Pack (2.6Ah) is selected for meeting voltage, capacity, and temperature suitability requirements for indoor domestic settings.</p>
           <div style="text-align: center; display: flex; flex-direction: column; align-items: center; padding-top: 40px; padding-bottom: 20px;">
-            <img class="article-image" src="projects/ERGOCLEAN_me.jpg" width="100%">
+            <img class="article-image" src="projects/ergoclean_me.jpg" width="100%">
             <i class="table-caption">Figure 4. Producting the CAD of the product</i>
           </div>
           <h2>Detailed Design: DFMA</h2>
@@ -146,7 +146,7 @@
           <p>The determination of component costs involved a comprehensive approach. Purchased components were priced based on the manufacturer's listed rates, while the costs of manufactured parts were derived from various sources. Solidworks costing tool was utilized for certain components, where knowledge of manufacturing methods and materials enabled automatic calculation of unit costs. Other online resources were employed for more intricate or multi-material parts. These cost estimates were predicated on a production scale of 100,000 units.</p>
           <p>It's important to acknowledge that these cost projections are contingent upon several factors. Production volume, whether 10,000 or 1,000,000 units, will significantly influence unit costs. Additionally, considerations must be given to manufacturing efficiency and fixed expenses. Given the alignment of this product within Bosch's product line, leveraging their streamlined production capabilities should facilitate further cost reductions, particularly since some components utilized in this product, such as LEDs and screws, are also employed by Bosch. Through economies of scale, we anticipate that the current unit cost of £34.06 will decrease, especially with regard to expensive components like the motor and battery. Our target selling price of £30 aligns with Bosch's pricing strategy for similar products, and a halving of the unit cost would render this price point feasible.</p>
         <div style="text-align: center; display: flex; flex-direction: column; align-items: center; padding-top: 40px; padding-bottom: 20px;">
-          <img class="article-image" src="projects/ERGOCLEAN_surface.jpg" width="100%">
+          <img class="article-image" src="projects/ergoclean_surface.jpg" width="100%">
           <i class="table-caption">Figure 5. The product alongside its scrubbing attachments</i>
         </div>
         <h2>Built for Sustainability</h2>
