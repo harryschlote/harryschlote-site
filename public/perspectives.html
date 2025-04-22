@@ -47,25 +47,46 @@
           </div>
         `;
         feed.appendChild(skeleton);
+
+        if (i < 2) {  // Prevent a separator after the last skeleton
+          const hr = document.createElement('hr');
+          hr.classList.add('separator');
+          feed.appendChild(hr);
+        }
       }
+
 
       try {
         const response = await fetch('/api/blog');
         const posts = await response.json();
 
-        // 💥 Clear skeletons
+        // Clear skeletons
         feed.innerHTML = '';
 
         posts.forEach((post, index) => {
           const postElement = document.createElement('div');
           postElement.classList.add('post');
 
-          postElement.innerHTML = `<div class="article-para">
-            <h2><a href="/perspectives/${post.slug}">${post.title}</a><img class="item-arrow" src="assets/arrow.svg"/></h2>
-            <p id="post-date">${new Date(post.date).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}</p>
-            <div class="post-content">${post.content}</div>
-            </div>
-            `;
+          const maxLength = 220;
+          let preview = post.content;
+
+          if (preview.length > maxLength) {
+            preview = preview.slice(0, maxLength);
+            preview = preview.slice(0, preview.lastIndexOf(" ")) + ' ...';
+          }
+
+          postElement.innerHTML = `
+            <a href="/perspectives/${post.slug}" class="post-link">
+              <div class="article-para">
+                <h2>${post.title}<img class="item-arrow" src="assets/arrow.svg"/></h2>
+                <p id="post-date">${new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                <p class="post-preview">${preview}</p>
+              </div>
+            </a>
+          `;
+
+
+
 
           feed.appendChild(postElement);
 
